@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5125dc413d9f4c44845bbd937708776b" Name="Diagram1">
+        <EntityTypeShape EntityType="dbVietFestModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="dbVietFestModel.tblDanhMucSanPham" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="dbVietFestModel.tblDonVi" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="dbVietFestModel.tblMauSac" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="dbVietFestModel.tblSanPham" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="dbVietFestModel.tblThanhVien" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="dbVietFestModel.tblUser" Width="1.5" PointX="8" PointY="1" />
+        <AssociationConnector Association="dbVietFestModel.FK_tblSanPham_tblDanhMucSanPham" />
+        <AssociationConnector Association="dbVietFestModel.FK_tblSanPham_tblDonVi" />
+        <AssociationConnector Association="dbVietFestModel.FK_tblSanPham_tblMauSac" />
+        <AssociationConnector Association="dbVietFestModel.FK_tblUser_tblThanhVien" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_VietFest_TEC", "Project_VietFest_TEC\Project_VietFest_TEC.csproj", "{F67A01FF-342A-4015-80CE-AE226F9E61BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F67A01FF-342A-4015-80CE-AE226F9E61BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F67A01FF-342A-4015-80CE-AE226F9E61BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F67A01FF-342A-4015-80CE-AE226F9E61BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F67A01FF-342A-4015-80CE-AE226F9E61BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5707A91E-288A-41E5-8483-D2FC3D8516F6}
+	EndGlobalSection
+EndGlobal

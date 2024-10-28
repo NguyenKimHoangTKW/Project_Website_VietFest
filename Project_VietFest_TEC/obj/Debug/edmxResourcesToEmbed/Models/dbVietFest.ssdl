@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbVietFestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblDanhMucSanPham">
+    <Key>
+      <PropertyRef Name="id_dmsp" />
+    </Key>
+    <Property Name="id_dmsp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_dmsp" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDonVi">
+    <Key>
+      <PropertyRef Name="id_dv" />
+    </Key>
+    <Property Name="id_dv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_dv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblMauSac">
+    <Key>
+      <PropertyRef Name="id_mau_sac" />
+    </Key>
+    <Property Name="id_mau_sac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_mau_sac" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblSanPham">
+    <Key>
+      <PropertyRef Name="id_sp" />
+    </Key>
+    <Property Name="id_sp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_sp" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id_dv" Type="int" Nullable="false" />
+    <Property Name="id_dmsp" Type="int" Nullable="false" />
+    <Property Name="id_mau_sac" Type="int" />
+    <Property Name="gia" Type="float" />
+    <Property Name="mo_ta" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblThanhVien">
+    <Key>
+      <PropertyRef Name="id_thanh_vien" />
+    </Key>
+    <Property Name="id_thanh_vien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_thanh_vien" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngay_vao_lam" Type="int" />
+    <Property Name="gioi_tinh" Type="int" />
+    <Property Name="mo_ta" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="id_users" />
+    </Key>
+    <Property Name="id_users" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="trang_thai" Type="int" Nullable="false" />
+    <Property Name="mo_ta" Type="nvarchar" MaxLength="100" />
+    <Property Name="id_nhan_vien" Type="int" />
+  </EntityType>
+  <Association Name="FK_tblSanPham_tblDanhMucSanPham">
+    <End Role="tblDanhMucSanPham" Type="Self.tblDanhMucSanPham" Multiplicity="1" />
+    <End Role="tblSanPham" Type="Self.tblSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDanhMucSanPham">
+        <PropertyRef Name="id_dmsp" />
+      </Principal>
+      <Dependent Role="tblSanPham">
+        <PropertyRef Name="id_dmsp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSanPham_tblDonVi">
+    <End Role="tblDonVi" Type="Self.tblDonVi" Multiplicity="1" />
+    <End Role="tblSanPham" Type="Self.tblSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDonVi">
+        <PropertyRef Name="id_dv" />
+      </Principal>
+      <Dependent Role="tblSanPham">
+        <PropertyRef Name="id_dv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSanPham_tblMauSac">
+    <End Role="tblMauSac" Type="Self.tblMauSac" Multiplicity="0..1" />
+    <End Role="tblSanPham" Type="Self.tblSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMauSac">
+        <PropertyRef Name="id_mau_sac" />
+      </Principal>
+      <Dependent Role="tblSanPham">
+        <PropertyRef Name="id_mau_sac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUser_tblThanhVien">
+    <End Role="tblThanhVien" Type="Self.tblThanhVien" Multiplicity="0..1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblThanhVien">
+        <PropertyRef Name="id_thanh_vien" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="id_nhan_vien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbVietFestModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDanhMucSanPham" EntityType="Self.tblDanhMucSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDonVi" EntityType="Self.tblDonVi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMauSac" EntityType="Self.tblMauSac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSanPham" EntityType="Self.tblSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblThanhVien" EntityType="Self.tblThanhVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblSanPham_tblDanhMucSanPham" Association="Self.FK_tblSanPham_tblDanhMucSanPham">
+      <End Role="tblDanhMucSanPham" EntitySet="tblDanhMucSanPham" />
+      <End Role="tblSanPham" EntitySet="tblSanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSanPham_tblDonVi" Association="Self.FK_tblSanPham_tblDonVi">
+      <End Role="tblDonVi" EntitySet="tblDonVi" />
+      <End Role="tblSanPham" EntitySet="tblSanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSanPham_tblMauSac" Association="Self.FK_tblSanPham_tblMauSac">
+      <End Role="tblMauSac" EntitySet="tblMauSac" />
+      <End Role="tblSanPham" EntitySet="tblSanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUser_tblThanhVien" Association="Self.FK_tblUser_tblThanhVien">
+      <End Role="tblThanhVien" EntitySet="tblThanhVien" />
+      <End Role="tblUser" EntitySet="tblUser" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

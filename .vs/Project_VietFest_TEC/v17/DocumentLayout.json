@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TEC-2024\\Project_VietFest_TEC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|d:\\tec-2024\\project_vietfest_tec\\project_vietfest_tec\\controllers\\homeapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|solutionrelative:project_vietfest_tec\\controllers\\homeapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|D:\\TEC-2024\\Project_VietFest_TEC\\project_vietfest_tec\\scripts\\nguoidung\\giaodiennguoidung.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|solutionrelative:project_vietfest_tec\\scripts\\nguoidung\\giaodiennguoidung.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|D:\\TEC-2024\\Project_VietFest_TEC\\project_vietfest_tec\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|solutionrelative:project_vietfest_tec\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|D:\\TEC-2024\\Project_VietFest_TEC\\project_vietfest_tec\\models\\dbvietfest.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{F67A01FF-342A-4015-80CE-AE226F9E61BB}|Project_VietFest_TEC\\Project_VietFest_TEC.csproj|solutionrelative:project_vietfest_tec\\models\\dbvietfest.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 228,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbVietFest.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Models\\dbVietFest.edmx",
+              "RelativeDocumentMoniker": "Project_VietFest_TEC\\Models\\dbVietFest.edmx",
+              "ToolTip": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Models\\dbVietFest.edmx [Diagram1]",
+              "RelativeToolTip": "Project_VietFest_TEC\\Models\\dbVietFest.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-10-28T07:47:49.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project_VietFest_TEC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Project_VietFest_TEC\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T07:43:22.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GiaoDienNguoiDung.js",
+              "DocumentMoniker": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Scripts\\NguoiDung\\GiaoDienNguoiDung.js",
+              "RelativeDocumentMoniker": "Project_VietFest_TEC\\Scripts\\NguoiDung\\GiaoDienNguoiDung.js",
+              "ToolTip": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Scripts\\NguoiDung\\GiaoDienNguoiDung.js",
+              "RelativeToolTip": "Project_VietFest_TEC\\Scripts\\NguoiDung\\GiaoDienNguoiDung.js",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-28T07:44:17.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeAPIController.cs",
+              "DocumentMoniker": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Controllers\\HomeAPIController.cs",
+              "RelativeDocumentMoniker": "Project_VietFest_TEC\\Controllers\\HomeAPIController.cs",
+              "ToolTip": "D:\\TEC-2024\\Project_VietFest_TEC\\Project_VietFest_TEC\\Controllers\\HomeAPIController.cs",
+              "RelativeToolTip": "Project_VietFest_TEC\\Controllers\\HomeAPIController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T07:53:08.55Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

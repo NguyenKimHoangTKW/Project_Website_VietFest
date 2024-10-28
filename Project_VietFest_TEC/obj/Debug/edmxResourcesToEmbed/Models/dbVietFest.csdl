@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbVietFestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbVietFestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="dbVietFestModel.sysdiagram" />
+    <EntitySet Name="tblDanhMucSanPhams" EntityType="dbVietFestModel.tblDanhMucSanPham" />
+    <EntitySet Name="tblDonVis" EntityType="dbVietFestModel.tblDonVi" />
+    <EntitySet Name="tblMauSacs" EntityType="dbVietFestModel.tblMauSac" />
+    <EntitySet Name="tblSanPhams" EntityType="dbVietFestModel.tblSanPham" />
+    <EntitySet Name="tblThanhViens" EntityType="dbVietFestModel.tblThanhVien" />
+    <EntitySet Name="tblUsers" EntityType="dbVietFestModel.tblUser" />
+    <AssociationSet Name="FK_tblSanPham_tblDanhMucSanPham" Association="dbVietFestModel.FK_tblSanPham_tblDanhMucSanPham">
+      <End Role="tblDanhMucSanPham" EntitySet="tblDanhMucSanPhams" />
+      <End Role="tblSanPham" EntitySet="tblSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSanPham_tblDonVi" Association="dbVietFestModel.FK_tblSanPham_tblDonVi">
+      <End Role="tblDonVi" EntitySet="tblDonVis" />
+      <End Role="tblSanPham" EntitySet="tblSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSanPham_tblMauSac" Association="dbVietFestModel.FK_tblSanPham_tblMauSac">
+      <End Role="tblMauSac" EntitySet="tblMauSacs" />
+      <End Role="tblSanPham" EntitySet="tblSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUser_tblThanhVien" Association="dbVietFestModel.FK_tblUser_tblThanhVien">
+      <End Role="tblThanhVien" EntitySet="tblThanhViens" />
+      <End Role="tblUser" EntitySet="tblUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblDanhMucSanPham">
+    <Key>
+      <PropertyRef Name="id_dmsp" />
+    </Key>
+    <Property Name="id_dmsp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_dmsp" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblSanPhams" Relationship="dbVietFestModel.FK_tblSanPham_tblDanhMucSanPham" FromRole="tblDanhMucSanPham" ToRole="tblSanPham" />
+  </EntityType>
+  <EntityType Name="tblDonVi">
+    <Key>
+      <PropertyRef Name="id_dv" />
+    </Key>
+    <Property Name="id_dv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_dv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblSanPhams" Relationship="dbVietFestModel.FK_tblSanPham_tblDonVi" FromRole="tblDonVi" ToRole="tblSanPham" />
+  </EntityType>
+  <EntityType Name="tblMauSac">
+    <Key>
+      <PropertyRef Name="id_mau_sac" />
+    </Key>
+    <Property Name="id_mau_sac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_mau_sac" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblSanPhams" Relationship="dbVietFestModel.FK_tblSanPham_tblMauSac" FromRole="tblMauSac" ToRole="tblSanPham" />
+  </EntityType>
+  <EntityType Name="tblSanPham">
+    <Key>
+      <PropertyRef Name="id_sp" />
+    </Key>
+    <Property Name="id_sp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_sp" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="id_dv" Type="Int32" Nullable="false" />
+    <Property Name="id_dmsp" Type="Int32" Nullable="false" />
+    <Property Name="id_mau_sac" Type="Int32" />
+    <Property Name="gia" Type="Double" />
+    <Property Name="mo_ta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblDanhMucSanPham" Relationship="dbVietFestModel.FK_tblSanPham_tblDanhMucSanPham" FromRole="tblSanPham" ToRole="tblDanhMucSanPham" />
+    <NavigationProperty Name="tblDonVi" Relationship="dbVietFestModel.FK_tblSanPham_tblDonVi" FromRole="tblSanPham" ToRole="tblDonVi" />
+    <NavigationProperty Name="tblMauSac" Relationship="dbVietFestModel.FK_tblSanPham_tblMauSac" FromRole="tblSanPham" ToRole="tblMauSac" />
+  </EntityType>
+  <EntityType Name="tblThanhVien">
+    <Key>
+      <PropertyRef Name="id_thanh_vien" />
+    </Key>
+    <Property Name="id_thanh_vien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_thanh_vien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_vao_lam" Type="Int32" />
+    <Property Name="gioi_tinh" Type="Int32" />
+    <Property Name="mo_ta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUsers" Relationship="dbVietFestModel.FK_tblUser_tblThanhVien" FromRole="tblThanhVien" ToRole="tblUser" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="id_users" />
+    </Key>
+    <Property Name="id_users" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trang_thai" Type="Int32" Nullable="false" />
+    <Property Name="mo_ta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="id_nhan_vien" Type="Int32" />
+    <NavigationProperty Name="tblThanhVien" Relationship="dbVietFestModel.FK_tblUser_tblThanhVien" FromRole="tblUser" ToRole="tblThanhVien" />
+  </EntityType>
+  <Association Name="FK_tblSanPham_tblDanhMucSanPham">
+    <End Type="dbVietFestModel.tblDanhMucSanPham" Role="tblDanhMucSanPham" Multiplicity="1" />
+    <End Type="dbVietFestModel.tblSanPham" Role="tblSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDanhMucSanPham">
+        <PropertyRef Name="id_dmsp" />
+      </Principal>
+      <Dependent Role="tblSanPham">
+        <PropertyRef Name="id_dmsp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSanPham_tblDonVi">
+    <End Type="dbVietFestModel.tblDonVi" Role="tblDonVi" Multiplicity="1" />
+    <End Type="dbVietFestModel.tblSanPham" Role="tblSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDonVi">
+        <PropertyRef Name="id_dv" />
+      </Principal>
+      <Dependent Role="tblSanPham">
+        <PropertyRef Name="id_dv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSanPham_tblMauSac">
+    <End Type="dbVietFestModel.tblMauSac" Role="tblMauSac" Multiplicity="0..1" />
+    <End Type="dbVietFestModel.tblSanPham" Role="tblSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMauSac">
+        <PropertyRef Name="id_mau_sac" />
+      </Principal>
+      <Dependent Role="tblSanPham">
+        <PropertyRef Name="id_mau_sac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUser_tblThanhVien">
+    <End Type="dbVietFestModel.tblThanhVien" Role="tblThanhVien" Multiplicity="0..1" />
+    <End Type="dbVietFestModel.tblUser" Role="tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblThanhVien">
+        <PropertyRef Name="id_thanh_vien" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="id_nhan_vien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
